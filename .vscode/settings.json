@@ -1,6 +1,7 @@
 {
     "python.analysis.autoImportCompletions": false,
     "cSpell.words": [
+        "preds",
         "scatterplot"
     ]
 }
