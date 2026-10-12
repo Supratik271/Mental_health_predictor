@@ -378,48 +378,49 @@ export default function Predict() {
           />
         )}
 
-        <div className="flex flex-col-reverse items-stretch justify-end gap-3 sm:flex-row sm:items-center">
-          <button
-            type="button"
-            className="btn-ghost inline-flex min-h-12 items-center justify-center gap-2 whitespace-nowrap"
-            disabled={isSubmitting}
-            onClick={() => {
-              reset(EMPTY);
-              setApiError(null);
-            }}
-          >
-            <RotateCcw
-              className="h-4 w-4 shrink-0"
-              aria-hidden="true"
-            />
-            <span>Clear form</span>
-          </button>
+      <div className="flex flex-col-reverse items-stretch justify-end gap-3 sm:flex-row sm:items-center">
+  <button
+    type="button"
+    className="btn btn-ghost min-h-12 whitespace-nowrap"
+    disabled={isSubmitting}
+    onClick={() => {
+      reset(EMPTY);
+      setApiError(null);
+    }}
+  >
+    <RotateCcw
+      className="h-4 w-4 shrink-0"
+      aria-hidden="true"
+    />
+    <span>Clear form</span>
+  </button>
 
-          <button
-            type="submit"
-            className="btn-primary inline-flex min-h-12 items-center justify-center gap-2 whitespace-nowrap"
-            disabled={isSubmitting}
-          >
-            {isSubmitting ? (
-              <>
-                <Loader2
-                  className="h-4 w-4 shrink-0 animate-spin"
-                  aria-hidden="true"
-                />
-                <span>Running model...</span>
-              </>
-            ) : (
-              <>
-                <Sparkles
-                  className="h-4 w-4 shrink-0"
-                  aria-hidden="true"
-                />
-                <span>Get prediction</span>
-              </>
-            )}
-          </button>
-        </div>
-      </form>
-    </div>
-  );
+  <button
+    type="submit"
+    className="btn btn-primary min-h-12 whitespace-nowrap"
+    disabled={isSubmitting}
+  >
+    {isSubmitting ? (
+      <>
+        <Loader2
+          className="h-4 w-4 shrink-0 animate-spin"
+          aria-hidden="true"
+        />
+        <span>Running model...</span>
+      </>
+    ) : (
+      <>
+        <Sparkles
+          className="h-4 w-4 shrink-0"
+          aria-hidden="true"
+        />
+        <span>Get prediction</span>
+      </>
+    )}
+  </button>
+</div>
+</form>
+</div>
+);
 }
+
