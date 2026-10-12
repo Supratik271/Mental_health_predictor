@@ -57,13 +57,32 @@ export default function Results() {
         </dl>
       </section>
 
-      <div className="flex flex-wrap gap-3">
-        <Link to="/predict" className="btn-primary"><Plus className="h-4 w-4" aria-hidden /> Run another prediction</Link>
-        <button className="btn-ghost" onClick={() => navigate("/predict", { state: { prefill: entry.input } })}>
-          <Repeat className="h-4 w-4" aria-hidden /> Edit these inputs
+      <div className="flex flex-wrap items-center gap-3">
+        <Link
+          to="/predict"
+          className="btn-primary inline-flex items-center justify-center gap-2"
+        >
+          <Plus className="h-4 w-4 shrink-0" aria-hidden />
+          <span>Run another prediction</span>
+        </Link>
+
+        <button
+          className="btn-ghost inline-flex items-center justify-center gap-2"
+          onClick={() => navigate("/predict", { state: { prefill: entry.input } })}
+        >
+          <Repeat className="h-4 w-4 shrink-0" aria-hidden />
+          <span>Edit these inputs</span>
         </button>
-        <Link to="/history" className="btn-ghost"><Clock className="h-4 w-4" aria-hidden /> View history</Link>
+
+        <Link
+          to="/history"
+          className="btn-ghost inline-flex items-center justify-center gap-2"
+        >
+          <Clock className="h-4 w-4 shrink-0" aria-hidden />
+          <span>View history</span>
+        </Link>
       </div>
     </div>
   );
 }
+
