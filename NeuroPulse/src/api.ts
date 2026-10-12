@@ -18,7 +18,10 @@ export class ApiError extends Error {
   }
 }
 
-const BASE: string = (import.meta.env.VITE_API_BASE_URL as string | undefined) ?? "/api";
+
+const BASE: string =
+  (import.meta.env.VITE_API_BASE_URL as string | undefined) ??
+  "https://mental-health-api-backend.onrender.com";
 const TIMEOUT_MS = 20000;
 
 interface FastApiIssue { loc?: (string | number)[]; msg?: string }
